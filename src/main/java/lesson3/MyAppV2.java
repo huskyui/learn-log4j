@@ -7,14 +7,17 @@ public class MyAppV2 {
     final static Logger logger = Logger.getLogger(MyAppV2.class);
 
     public static void main(String[] args) {
-        DOMConfigurator.configure("log4j.xml");
+        DOMConfigurator.configure("multiple.xml");
 
 
-        logger.info("Entering application");
-        Foo foo = new Foo();
-        foo.doIt();
+        for (int i = 0; i < 1000000; i++) {
 
-        logger.info("Exiting application.");
+            logger.info("Entering application");
+            Foo foo = new Foo();
+            foo.doIt();
+
+            logger.info("Exiting application.");
+        }
 
     }
 }
